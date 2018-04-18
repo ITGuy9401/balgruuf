@@ -1,0 +1,55 @@
+<!-- TITLE -->
+<mat-card class="mb-40">
+    <h1> List</h1>
+</mat-card>
+
+<!-- SEARCH FORM -->
+<mat-card>
+    
+    <div class="card-title">
+        <mat-icon>search</mat-icon>
+        Search
+    </div>
+        
+    <form name="form-search" class="container-fluid">
+
+        <div class="row">
+        </div>
+
+    </form>
+</mat-card>
+
+<!-- TABLE -->
+<table class="table table-hover mt-40">
+    <thead>
+        <tr>
+            <th>_id</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of list | search: {  }">
+            <td><a [routerLink]="['/s', item._id]">{{item._id}}</a></td>
+            
+            <!-- ATTRIBUTES -->
+            
+            
+            <!-- DELETE BUTTON -->
+            <td>
+                <button mat-icon-button (click)="openModal(item._id, modal)" class="mt--10">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    <div class="no-result" *ngIf="(list | search: {  }).length == 0">
+        No items found
+    </div>
+</table>
+
+<!-- BUTTON -->
+<button class="btn btn-primary pull-right mb-20" routerLink="/s/new" mat-fab color="primary">
+    <mat-icon>add</mat-icon>
+</button>
+
+<div class="clearfix"></div>

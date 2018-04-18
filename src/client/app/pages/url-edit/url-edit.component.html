@@ -1,0 +1,36 @@
+<!-- TITLE -->
+<mat-card class="mb-40">
+    <h1>Url Edit</h1>
+</mat-card>
+
+<mat-card>
+    <div class="card-title">
+        <mat-icon>edit</mat-icon>
+        Edit
+    </div>
+
+    <form #skaffolderForm="ngForm" class="container-fluid">
+        
+        
+        <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="LongUrl" [(ngModel)]="item.longUrl"  name="longUrl" id="longUrl" required>
+        </mat-form-field>
+        
+        
+        <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="ShortKey" [(ngModel)]="item.shortKey"  name="shortKey" id="shortKey" required>
+        </mat-form-field>
+        
+        
+        
+        
+
+
+        <!-- BUTTON BAR -->
+        <div class="mt-40">
+            <button mat-raised-button color="primary" class="pull-right mr-5" (click)="save(skaffolderForm.valid, item)">Save</button>
+            <button mat-raised-button class="pull-right " (click)="goBack()">Back To List</button>
+        </div>
+    </form>
+
+</mat-card>

@@ -1,0 +1,26 @@
+<!-- TITLE -->
+<mat-card class="mb-40">
+    <h1> Edit</h1>
+</mat-card>
+
+<mat-card>
+    <div class="card-title">
+        <mat-icon>edit</mat-icon>
+        Edit
+    </div>
+
+    <form #skaffolderForm="ngForm" class="container-fluid">
+        
+        
+        
+        
+
+
+        <!-- BUTTON BAR -->
+        <div class="mt-40">
+            <button mat-raised-button color="primary" class="pull-right mr-5" (click)="save(skaffolderForm.valid, item)">Save</button>
+            <button mat-raised-button class="pull-right " (click)="goBack()">Back To List</button>
+        </div>
+    </form>
+
+</mat-card>
